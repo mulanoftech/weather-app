@@ -1,0 +1,125 @@
+h1,
+h2,
+h3,
+p,
+body {
+  color: #fff;
+  margin: 0px;
+  padding: 0px;
+}
+h3 {
+  text-align: center;
+}
+a {
+  text-decoration: none !important;
+}
+tbody {
+  text-align: center;
+  color: #fff;
+}
+ul {
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+li {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+  height: 19px;
+  line-height: 1;
+  list-style: none;
+}
+#search-input,
+#search-button {
+  display: inline;
+}
+
+#search-input {
+  width: 80%;
+}
+#city-day-time {
+  margin: 5px 5px 5px 15px;
+  margin-left: 15px;
+}
+#curr-temp {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 4.5em;
+  margin: 0 auto;
+  padding-top: 0px;
+}
+
+.container {
+  background-image: linear-gradient(to top, #97d8ec 0%, #524a79 100%);
+}
+
+.magnify {
+  color: #fff;
+  line-height: 1em;
+}
+.city {
+  color: #fff;
+}
+.units {
+  font-size: 0.5em;
+  color: #fff;
+  vertical-align: super;
+}
+.curr-icon {
+  margin: 0 auto;
+  line-height: 2em;
+  font-size: 0.75em;
+}
+.feel-like {
+  margin: 0px;
+  padding: 0px;
+}
+.row.hi-lo {
+  font-size: 0.75em;
+  padding-left: 16px;
+}
+.hi-temp-icon {
+  color: red;
+}
+.lo-temp-icon {
+  color: blue;
+}
+
+.row-24-hours {
+  margin-top: 10px;
+  padding-top: 10px;
+  font-size: 0.8em;
+  border: 1px solid #3e3245;
+  border-radius: 6px;
+  background: #3e3245;
+  opacity: 0.7;
+}
+
+.row-15-days {
+  margin: 15px;
+  padding: 15px;
+  font-size: 0.8em;
+  color: #97d8ec;
+  display: block;
+  border: 1px solid #3e3245;
+  border-radius: 6px;
+  background: #3e3245;
+  opacity: 0.7;
+}
+
+.first-color {
+  background: #3e3245;
+}
+
+.second-color {
+  background: #524a79;
+}
+
+.third-color {
+  background: #97d8ec;
+}
+
+.fourth-color {
+  background: #74bbca;
+}
