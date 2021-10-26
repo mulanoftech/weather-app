@@ -50,10 +50,11 @@ li {
   padding-top: 0px;
 }
 
-.container {
+.weather-app {
+  max-width: 600px;
   background-image: linear-gradient(to top, #97d8ec 0%, #524a79 100%);
+  margin: 0 auto;
 }
-
 .magnify {
   color: #fff;
   line-height: 1em;
