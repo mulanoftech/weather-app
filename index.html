@@ -67,31 +67,26 @@
         <div class="col-8">
           <span id="actual-temp"></span>
           <span class="units">
-            <a href="#" class="units">°F</a>
+            <a href="#" class="units" id="c-to-f">°F</a>
+            <a href="#" class="units" id="f-to-c">°C</a>
           </span>
         </div>
         <div class="col-4">
           <i class="fas fa-cloud-sun curr-icon"></i>
         </div>
       </div>
-      <div class="row feel-like">
+      <div class="row hi-lo">
         <div class="col-8">
-          FeelLike 80°F
+          <i class="fas fa-temperature-low lo-temp-icon"></i>
+          <span id="temp-min"></span>°F
+          <i class="fas fa-temperature-high hi-temp-icon"></i>
+          <span id="temp-max"></span>°F
         </div>
         <div class="col-4">
           <ul>
             <li>Humidity: <span id="humidity"></span>%</li>
             <li>Wind: <span id="wind"></span> km/h</li>
           </ul>
-        </div>
-      </div>
-
-      <div class="row hi-lo">
-        <div class="col-12">
-          <i class="fas fa-temperature-high hi-temp-icon"></i>
-          90°F
-          <i class="fas fa-temperature-low lo-temp-icon"></i>
-          67°F
         </div>
       </div>
 

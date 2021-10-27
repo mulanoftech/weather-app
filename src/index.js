@@ -20,13 +20,18 @@ function formatDate() {
 formatDate();
 
 // #search-button, #search-input, #curr-location
-// #display-city, #actual-temp
+// #display-city, #actual-temp, #temp-min, #temp-max
+
+let fahrenheit;
 
 function displayWeatherInfo(response) {
   document.querySelector("#display-city").innerHTML = response.data.name;
+  let fahrenheit = Math.round(response.data.main.temp);
   document.querySelector("#actual-temp").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#temp-min").innerHTML = Math.round(response.data.main.temp_min);
+  document.querySelector("#temp-max").innerHTML = Math.round(response.data.main.temp_max);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -64,3 +69,19 @@ button.addEventListener("click", getCurrentPosition);
 
 // initialize city to preview Singapore's weather
 searchCity("Singapore");
+
+let c2flink = document.querySelector("#c-to-f");
+c2flink.addEventListener("click", function (event) {
+  event.preventDefault();
+  let celsius = document.querySelector("#actual-temp").innerHTML;
+  let newFahr = Math.round((celsius * 9) / 5 + 32);
+  document.querySelector("#actual-temp").innerHTML = newFahr;
+});
+
+let f2clink = document.querySelector("#f-to-c");
+f2clink.addEventListener("click", function (event) {
+  event.preventDefault();
+  let fahrenheit = document.querySelector("#actual-temp").innerHTML;
+  let newCelsius = Math.round(((fahrenheit - 32) * 5) / 9);
+  document.querySelector("#actual-temp").innerHTML = newCelsius;
+});

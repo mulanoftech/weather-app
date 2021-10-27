@@ -50,10 +50,17 @@ li {
   padding-top: 0px;
 }
 
+#curr-location {
+  position: relative;
+  float: right;
+}
+
 .weather-app {
   max-width: 600px;
   background-image: linear-gradient(to top, #97d8ec 0%, #524a79 100%);
   margin: 0 auto;
+  border: 1px solid #dadeda;
+  border-radius: 6px;
 }
 .magnify {
   color: #fff;
