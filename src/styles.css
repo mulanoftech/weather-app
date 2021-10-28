@@ -74,15 +74,12 @@ li {
   color: #fff;
   vertical-align: super;
 }
-.curr-icon {
+#icon {
   margin: 0 auto;
   line-height: 2em;
   font-size: 0.75em;
 }
-.feel-like {
-  margin: 0px;
-  padding: 0px;
-}
+
 .row.hi-lo {
   font-size: 0.75em;
   padding-left: 16px;

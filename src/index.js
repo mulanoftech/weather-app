@@ -21,10 +21,12 @@ formatDate();
 
 // #search-button, #search-input, #curr-location
 // #display-city, #actual-temp, #temp-min, #temp-max
+// #icon
 
 let fahrenheit;
 
 function displayWeatherInfo(response) {
+  let currIcon = response.data.weather[0].icon;
   document.querySelector("#display-city").innerHTML = response.data.name;
   let fahrenheit = Math.round(response.data.main.temp);
   document.querySelector("#actual-temp").innerHTML = Math.round(
@@ -38,6 +40,7 @@ function displayWeatherInfo(response) {
   );
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].main;
+  document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${currIcon}@2x.png`);
 }
 
 function searchCity(city) {
