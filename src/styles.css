@@ -54,7 +54,11 @@ li {
   position: relative;
   float: right;
 }
-
+#icon {
+  margin: 0 auto;
+  line-height: 2em;
+  font-size: 0.75em;
+}
 .weather-app {
   max-width: 600px;
   background-image: linear-gradient(to top, #97d8ec 0%, #524a79 100%);
@@ -74,10 +78,9 @@ li {
   color: #fff;
   vertical-align: super;
 }
-#icon {
-  margin: 0 auto;
-  line-height: 2em;
-  font-size: 0.75em;
+
+.my-name {
+  color: #524a79;
 }
 
 .row.hi-lo {
