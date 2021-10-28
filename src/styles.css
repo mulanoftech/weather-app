@@ -54,10 +54,10 @@ li {
   position: relative;
   float: right;
 }
-#icon {
+#icon,
+#extra-info {
   margin: 0 auto;
-  line-height: 2em;
-  font-size: 0.75em;
+  float: right;
 }
 .weather-app {
   max-width: 600px;
