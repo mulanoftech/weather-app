@@ -70,6 +70,7 @@ searchForm.addEventListener("submit", handleSubmit);
 let button = document.querySelector("#curr-location");
 button.addEventListener("click", getCurrentPosition);
 
+// this is for the F link
 let c2flink = document.querySelector("#c-to-f");
 c2flink.addEventListener("click", function (event) {
   event.preventDefault();
@@ -80,7 +81,7 @@ c2flink.addEventListener("click", function (event) {
   document.querySelector("#actual-temp").innerHTML = newFahr;
 });
 
-
+// this is for the C link
 let f2clink = document.querySelector("#f-to-c");
 f2clink.addEventListener("click", function (event) {
   event.preventDefault();

@@ -86,6 +86,7 @@ li {
 }
 .units .active:hover {
   text-decoration: none;
+  pointer-events: none;
 }
 
 .my-name {
