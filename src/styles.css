@@ -77,6 +77,15 @@ li {
   font-size: 0.5em;
   color: #fff;
   vertical-align: super;
+  font-weight: 100;
+}
+
+.units .active {
+  color: #fff;
+  cursor: default;
+}
+.units .active:hover {
+  text-decoration: none;
 }
 
 .my-name {
@@ -95,7 +104,7 @@ li {
 }
 
 .row-24-hours {
-  margin-top: 10px;
+  margin: 10px 15px 0 15px;
   padding-top: 10px;
   font-size: 0.8em;
   border: 1px solid #3e3245;

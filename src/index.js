@@ -23,7 +23,7 @@ formatDate();
 // #display-city, #actual-temp, #temp-min, #temp-max
 // #icon
 
-let fahrenheit;
+let fahrenheit = null;
 
 function displayWeatherInfo(response) {
   let currIcon = response.data.weather[0].icon;
@@ -70,21 +70,30 @@ searchForm.addEventListener("submit", handleSubmit);
 let button = document.querySelector("#curr-location");
 button.addEventListener("click", getCurrentPosition);
 
-// initialize city to preview Singapore's weather
-searchCity("Singapore");
-
 let c2flink = document.querySelector("#c-to-f");
 c2flink.addEventListener("click", function (event) {
   event.preventDefault();
   let celsius = document.querySelector("#actual-temp").innerHTML;
+  c2flink.classList.add("active");
+  f2clink.classList.remove("active");
   let newFahr = Math.round((celsius * 9) / 5 + 32);
   document.querySelector("#actual-temp").innerHTML = newFahr;
 });
+
 
 let f2clink = document.querySelector("#f-to-c");
 f2clink.addEventListener("click", function (event) {
   event.preventDefault();
   let fahrenheit = document.querySelector("#actual-temp").innerHTML;
+  // remove the active class from the Fahrenheit link.
+  c2flink.classList.remove("active");
+  // add the active class to the Celsius link.
+  f2clink.classList.add("active");
   let newCelsius = Math.round(((fahrenheit - 32) * 5) / 9);
   document.querySelector("#actual-temp").innerHTML = newCelsius;
 });
+
+
+
+// initialize city to preview Singapore's weather
+searchCity("Singapore");
