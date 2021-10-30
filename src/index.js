@@ -25,10 +25,33 @@ formatDate();
 
 let fahrenheit = null;
 
+function displayDailyForecast() {
+
+  let dForecastElement = document.querySelector("#daily-forecast");
+  let days = ["Thu","Fri","Sat","Sun"];
+
+  let dForecastHTML = ``;
+  days.forEach(function (day) {
+  dForecastHTML = dForecastHTML + 
+       `
+       <tr>
+        <td class="days-dates">Date</td>
+        <td><i class="fas fa-sun"></i></td>
+        <td>Sunny</td>
+        <td>65 ~ 80</td>
+      </tr>
+  `;
+  });
+  dForecastHTML = dForecastHTML + ``;
+  dForecastElement.innerHTML = dForecastHTML;
+  console.log(dForecastHTML);
+}
+
 function displayWeatherInfo(response) {
   let currIcon = response.data.weather[0].icon;
   document.querySelector("#display-city").innerHTML = response.data.name;
   let fahrenheit = Math.round(response.data.main.temp);
+
   document.querySelector("#actual-temp").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -94,7 +117,6 @@ f2clink.addEventListener("click", function (event) {
   document.querySelector("#actual-temp").innerHTML = newCelsius;
 });
 
-
-
 // initialize city to preview Singapore's weather
 searchCity("Singapore");
+displayDailyForecast();
