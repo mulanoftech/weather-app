@@ -26,19 +26,18 @@ formatDate();
 let fahrenheit = null;
 
 function displayDailyForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let dForecastElement = document.querySelector("#daily-forecast");
-  let days = ["Thu","Fri","Sat","Sun"];
-
+  
   let dForecastHTML = ``;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
   dForecastHTML = dForecastHTML + 
        `
        <tr>
-        <td class="days-dates">${day}</td>
-        <td><i class="fas fa-sun"></i></td>
-        <td>Sunny</td>
-        <td>65 ~ 80</td>
+        <td class="days-dates">${forecastDay.dt}</td>
+        <td><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"/ alt="" width="40"></td>
+        <td>${forecastDay.weather[0].main}</td>
+        <td>${forecastDay.temp.min} ~ ${forecastDay.temp.max}</td>
       </tr>
   `;
   });
