@@ -25,8 +25,8 @@ formatDate();
 
 let fahrenheit = null;
 
-function displayDailyForecast() {
-
+function displayDailyForecast(response) {
+  console.log(response.data.daily);
   let dForecastElement = document.querySelector("#daily-forecast");
   let days = ["Thu","Fri","Sat","Sun"];
 
@@ -35,7 +35,7 @@ function displayDailyForecast() {
   dForecastHTML = dForecastHTML + 
        `
        <tr>
-        <td class="days-dates">Date</td>
+        <td class="days-dates">${day}</td>
         <td><i class="fas fa-sun"></i></td>
         <td>Sunny</td>
         <td>65 ~ 80</td>
@@ -45,6 +45,14 @@ function displayDailyForecast() {
   dForecastHTML = dForecastHTML + ``;
   dForecastElement.innerHTML = dForecastHTML;
   console.log(dForecastHTML);
+}
+function getDForecast(coordinates) {
+  console.log(coordinates);
+  let key = "35c9364c504818025de7c0b94a64553f";
+  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=imperial`;
+  console.log(url);
+  axios.get(url).then(displayDailyForecast);
+
 }
 
 function displayWeatherInfo(response) {
@@ -64,6 +72,7 @@ function displayWeatherInfo(response) {
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${currIcon}@2x.png`);
+  getDForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -119,4 +128,4 @@ f2clink.addEventListener("click", function (event) {
 
 // initialize city to preview Singapore's weather
 searchCity("Singapore");
-displayDailyForecast();
+//displayDailyForecast();
