@@ -31,16 +31,25 @@ function formatDTStamp(dtstamp) {
 let fahrenheit = null;
 
 function displayDailyForecast(response) {
+
   // --------- 6-hr forecast
   let hourlyForecast = response.data.hourly;
   console.log(hourlyForecast);
-  let hForecastHTML = ``;
+  let hForecastElement = document.querySelector("#hourly-forecast");
+  let hForecastHTML = `<div class="row">`;
+  hourlyForecast.forEach(function (forecastHr, index) {
+if(index<6) {
+  hForecastHTML = hForecastHTML +
     `<div class="col-2">
-      <div>xx:xx</div>
-      <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="" width="60"/>
-      <div>80F</div>
+      <div class="days-dates">xx:xx</div>
+      <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="" width="60" id="hourlyIcon"/>
+      <div class="hourlyTemp">${Math.round(forecastHr.temp)}°F</div>
     </div>
   `;
+  }
+  })
+  hForecastHTML = hForecastHTML + `</div>`;
+  hForecastElement.innerHTML = hForecastHTML;
 
   // ---------- 7-day forecast
   let forecast = response.data.daily;
