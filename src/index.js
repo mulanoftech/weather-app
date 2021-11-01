@@ -28,6 +28,16 @@ function formatDTStamp(dtstamp) {
   let days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
   return days[day];
 }
+
+function formatTime(dtstamp) {
+  let date = new Date(dtstamp * 1000);
+  let hour = date.getHours();
+  hour = hour < 10 ? `0${hour}` : hour;
+  let minutes = date.getMinutes();
+  minutes = minutes < 10 ? `0${minutes}` : minutes;
+  return `${hour}:${minutes}`;
+}
+
 let fahrenheit = null;
 
 function displayDailyForecast(response) {
@@ -41,8 +51,8 @@ function displayDailyForecast(response) {
 if(index<6) {
   hForecastHTML = hForecastHTML +
     `<div class="col-2">
-      <div class="days-dates">xx:xx</div>
-      <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="" width="60" id="hourlyIcon"/>
+      <div class="days-dates">${formatTime(forecastHr.dt)}</div>
+      <img src="http://openweathermap.org/img/wn/${forecastHr.weather[0].icon}@2x.png" alt="" width="60" id="hourlyIcon"/>
       <div class="hourlyTemp">${Math.round(forecastHr.temp)}°F</div>
     </div>
   `;
@@ -64,7 +74,7 @@ if(index<6) {
         <td class="days-dates">${formatDTStamp(forecastDay.dt)}</td>
         <td><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"/ alt="" width="40"></td>
         <td>${forecastDay.weather[0].main}</td>
-        <td>${Math.round(forecastDay.temp.min)} ~ ${Math.round(forecastDay.temp.max)}</td>
+        <td>${Math.round(forecastDay.temp.min)} ~ ${Math.round(forecastDay.temp.max)} °F</td>
       </tr>
   `;
   }
