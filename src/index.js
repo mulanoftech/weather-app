@@ -42,7 +42,7 @@ function displayDailyForecast(response) {
         <td class="days-dates">${formatDTStamp(forecastDay.dt)}</td>
         <td><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"/ alt="" width="40"></td>
         <td>${forecastDay.weather[0].main}</td>
-        <td>${forecastDay.temp.min} ~ ${forecastDay.temp.max}</td>
+        <td>${Math.round(forecastDay.temp.min)} ~ ${Math.round(forecastDay.temp.max)}</td>
       </tr>
   `;
   });
