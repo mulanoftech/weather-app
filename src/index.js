@@ -35,8 +35,9 @@ function displayDailyForecast(response) {
   let dForecastElement = document.querySelector("#daily-forecast");
   
   let dForecastHTML = ``;
-  forecast.forEach(function (forecastDay) {
-  dForecastHTML = dForecastHTML + 
+  forecast.forEach(function (forecastDay, index) {
+  if(index<7){
+    dForecastHTML = dForecastHTML + 
        `
        <tr>
         <td class="days-dates">${formatDTStamp(forecastDay.dt)}</td>
@@ -45,6 +46,8 @@ function displayDailyForecast(response) {
         <td>${Math.round(forecastDay.temp.min)} ~ ${Math.round(forecastDay.temp.max)}</td>
       </tr>
   `;
+  }
+
   });
   dForecastHTML = dForecastHTML + ``;
   dForecastElement.innerHTML = dForecastHTML;
