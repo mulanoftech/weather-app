@@ -59,6 +59,11 @@ li {
   margin: 0 auto;
   float: right;
 }
+
+#icon {
+  max-width: 200%;
+}
+
 .weather-app {
   max-width: 600px;
   background-image: linear-gradient(to top, #97d8ec 0%, #524a79 100%);
@@ -104,18 +109,19 @@ li {
   color: blue;
 }
 
-.row-24-hours {
-  margin: 10px 15px 0 15px;
+.row-6-hours {
+  margin: 10px 55px 0 55px;
   padding-top: 10px;
   font-size: 0.8em;
   border: 1px solid #3e3245;
   border-radius: 6px;
   background: #3e3245;
   opacity: 0.7;
+  max-width: 60%;
 }
 
-.row-15-days {
-  margin: 15px;
+.row-7-days {
+  margin: 65px;
   padding: 15px;
   font-size: 0.8em;
   color: #97d8ec;
