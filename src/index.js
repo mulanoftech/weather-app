@@ -22,7 +22,12 @@ formatDate();
 // #search-button, #search-input, #curr-location
 // #display-city, #actual-temp, #temp-min, #temp-max
 // #icon
-
+function formatDTStamp(dtstamp) {
+  let date = new Date(dtstamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  return days[day];
+}
 let fahrenheit = null;
 
 function displayDailyForecast(response) {
@@ -34,7 +39,7 @@ function displayDailyForecast(response) {
   dForecastHTML = dForecastHTML + 
        `
        <tr>
-        <td class="days-dates">${forecastDay.dt}</td>
+        <td class="days-dates">${formatDTStamp(forecastDay.dt)}</td>
         <td><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"/ alt="" width="40"></td>
         <td>${forecastDay.weather[0].main}</td>
         <td>${forecastDay.temp.min} ~ ${forecastDay.temp.max}</td>
