@@ -1,5 +1,5 @@
 # weather-app
-the beginnings of a portfolio with API calls
+utilizes the OpenWeather APIs.
 
-To test/preview the web app:
+To view this web app live, go to:
 https://heuristic-engelbart-685431.netlify.app
